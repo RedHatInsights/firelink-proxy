@@ -4,4 +4,3 @@ ENV CADDY_TLS_MODE http_port 8000
 
 COPY ./Caddyfile /etc/caddy/Caddyfile
 
-CMD ["caddy", "run", "--config", "/opt/app-root/src/Caddyfile"]
