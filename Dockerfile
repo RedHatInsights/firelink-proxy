@@ -1,7 +1,7 @@
-  FROM quay.io/cloudservices/caddy-ubi:ec1577c
+FROM quay.io/redhat-services-prod/hcm-eng-prod-tenant/caddy-ubi:0d6954b
 
-  ENV CADDY_TLS_MODE http_port 8000
+ENV CADDY_TLS_MODE http_port 8000
 
-  COPY ./Caddyfile /opt/app-root/src/Caddyfile
+COPY ./Caddyfile /opt/app-root/src/Caddyfile
 
-  CMD ["caddy", "run", "--config", "/opt/app-root/src/Caddyfile"]
+CMD ["caddy", "run", "--config", "/opt/app-root/src/Caddyfile"]
