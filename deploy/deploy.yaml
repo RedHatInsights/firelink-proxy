@@ -81,7 +81,6 @@ objects:
             - -openshift-ca=/var/run/secrets/kubernetes.io/serviceaccount/ca.crt
             - -skip-auth-regex=^/metrics
             - -pass-user-headers=true
-            - -client-id=system:serviceaccount:firelink:firelink-proxy
             - -openshift-delegate-urls={"\/":{"group":"","resource":"pods","verb":"get"}}
             - -pass-user-bearer-token=true
           image: quay.io/openshift/origin-oauth-proxy:4.14
