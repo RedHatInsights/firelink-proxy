@@ -67,6 +67,13 @@ objects:
             value: ${FRONTEND_SERVICE}
           - name: FRONTEND_PORT
             value: ${FRONTEND_PORT}
+          resources:
+            limits:
+              memory: "1Gi"
+              cpu: "500m"
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
         - name: oauth-proxy 
           args:
             - -provider=openshift
@@ -87,13 +94,20 @@ objects:
           imagePullPolicy: IfNotPresent
           ports:
             - name: oauth-proxy
-              containerPort: 8888    
+              containerPort: 8888
               protocol: TCP
           volumeMounts:
             - mountPath: /etc/tls/private
               name: secret-firelink-proxy-tls
             - mountPath: /etc/proxy/secrets
               name: secret-firelink-proxy
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "200m"
+            requests:
+              memory: "256Mi"
+              cpu: "100m"
         serviceAccountName: firelink-proxy
 
 
