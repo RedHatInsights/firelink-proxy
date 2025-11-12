@@ -90,7 +90,7 @@ objects:
             - -pass-user-headers=true
             - -openshift-delegate-urls={"\/":{"group":"","resource":"pods","verb":"get"}}
             - -pass-user-bearer-token=true
-          image: quay.io/openshift/origin-oauth-proxy:4.14
+          image: registry.redhat.io/openshift4/ose-oauth-proxy-rhel9:v4.18.0-202506230505.p0.gcbd44ad.assembly.stream.el9
           imagePullPolicy: IfNotPresent
           ports:
             - name: oauth-proxy
