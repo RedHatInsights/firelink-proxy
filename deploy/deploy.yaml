@@ -116,7 +116,7 @@ objects:
   metadata:
     name: firelink-proxy
     annotations:
-      service.alpha.openshift.io/serving-cert-secret-name: firelink-proxy-tls
+      service.alpha.openshift.io/serving-cert-secret-name: firelink-proxy-serving-cert
     labels:
       name: firelink-proxy
   spec:
