@@ -48,7 +48,7 @@ objects:
           - name: secret-firelink-proxy-tls
             secret:
               defaultMode: 420
-              secretName: firelink-proxy-tls
+              secretName: firelink-proxy-serving-cert
           - name: secret-firelink-proxy
             secret:
               defaultMode: 420
