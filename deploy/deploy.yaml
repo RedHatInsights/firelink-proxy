@@ -48,7 +48,7 @@ objects:
           - name: secret-firelink-proxy-tls
             secret:
               defaultMode: 420
-              secretName: firelink-proxy-tls
+              secretName: firelink-proxy-serving-cert
           - name: secret-firelink-proxy
             secret:
               defaultMode: 420
@@ -116,7 +116,7 @@ objects:
   metadata:
     name: firelink-proxy
     annotations:
-      service.alpha.openshift.io/serving-cert-secret-name: firelink-proxy-tls
+      service.alpha.openshift.io/serving-cert-secret-name: firelink-proxy-serving-cert
     labels:
       name: firelink-proxy
   spec:
@@ -152,16 +152,3 @@ objects:
     host: firelink.${INGRESS_DOMAIN}
     port:
       targetPort: 8888
-
-    apiVersion: rbac.authorization.k8s.io/v1
-    kind: ClusterRoleBinding
-    metadata:
-      name: firelink-proxy-auth-delegator
-    subjects:
-      - kind: ServiceAccount
-        name: firelink-proxy
-        namespace: firelink
-    roleRef:
-      kind: ClusterRole
-      name: system:auth-delegator
-      apiGroup: rbac.authorization.k8s.io
