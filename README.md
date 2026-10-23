@@ -52,8 +52,7 @@ The deployed Route will be available at `firelink.${INGRESS_DOMAIN}`.
 docker build -t firelink-proxy:latest .
 ```
 
-The Dockerfile copies the Caddyfile into a UBI-based Caddy image. Caddy listens on port 8000 with
-auto-HTTPS disabled.
+The Dockerfile copies the Caddyfile into a UBI-based Caddy image. Caddy listens on port 8000 with auto-HTTPS disabled.
 
 To build and push to Quay using the local build script (requires `QUAY_USER`, `QUAY_TOKEN`,
 `RH_REGISTRY_USER`, and `RH_REGISTRY_TOKEN` environment variables):
