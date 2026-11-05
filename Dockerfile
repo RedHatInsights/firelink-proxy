@@ -1,5 +1,5 @@
 # Build stage - compile Caddy from source
-FROM registry.access.redhat.com/hi/go:1.25.10-builder@sha256:1a99d42f555db97455998945faf3c797c1f65ce1b92e4d9952a589446d114d6c AS build
+FROM registry.access.redhat.com/hi/go:1.26.10-builder@sha256:784cc9545f11de3ab19c22be7528ef64706c310975778f377c0b0ce62cc053fc AS build
 
 WORKDIR /workspace
 
@@ -12,7 +12,7 @@ RUN git clone --branch ${CADDY_VERSION} --depth 1 https://github.com/caddyserver
     go build -trimpath -ldflags="-s -w" -o /workspace/caddy-binary
 
 # Runtime stage - distroless, non-root
-FROM registry.access.redhat.com/hi/go:1.25.10@sha256:c6c00ff7004990cc97f040024cbc4778388998f501421341146806039024d552
+FROM registry.access.redhat.com/hi/go:1.26.10@sha256:937cf018fc7add44cdbb15541f47897e494e68d20f4f9a59b95acb42f4176b11
 
 WORKDIR /opt/app-root/src
 
