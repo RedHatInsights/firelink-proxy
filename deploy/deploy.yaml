@@ -142,6 +142,7 @@ objects:
     annotations:
       cert-manager.io/issuer-kind: ClusterIssuer
       cert-manager.io/issuer-name: letsencrypt-devshiftnet-dns
+      haproxy.router.openshift.io/timeout: 10m
   spec:
     to:
       kind: Service
